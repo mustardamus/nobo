@@ -5,7 +5,7 @@ var nobo        = require('nobo'),
 
 
 nobo.get('/whatever', function(request, response) {
-  nobo.send.html(response, sys.inspect(request));
+  response.sendHtml(sys.inspect(request));
 });
 
 nobo.get(['/multiple', '/paths'], function(request, response) {
