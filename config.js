@@ -3,7 +3,9 @@ var config = {
   debug: true,                                        //print messages?
   fileTypes: {                                        //which file types you want to register and how they need to get served
     '.html' : 'text/html',
-    '.css'  : 'text/css'
+    '.css'  : 'text/css',
+    '.less' : 'text/css',
+    '.js'   : 'text/javascript'
   }
 }
 

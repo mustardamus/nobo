@@ -9,7 +9,6 @@ nobo.get('/whatever', function(request, response) {
 });
 
 nobo.get(['/multiple', '/paths'], function(request, response) {
-  //nobo.send.html(response, sys.inspect(response));
   response.sendHtml('huha');
 });
 
