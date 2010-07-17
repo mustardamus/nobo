@@ -16,7 +16,7 @@
 Nobo extends the request and response objects returned to your callback.
 
     nobo.get('/params', function(request, response) {
-      response.sendHtml(request.params);
+      response.sendInspect(request.params);
     });
 
 Available extensions:

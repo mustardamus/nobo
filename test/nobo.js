@@ -21,4 +21,5 @@ assert.response('/index.html', 200, 'text/html', 'something great');
 assert.response('/css/reset.css', 200, 'text/css', 'html,body');
 assert.response('/css/app.less', 200, 'text/css', 'background: #eeeeee;');
 assert.response('/js/app.js', 200, 'text/javascript', 'ready');
+assert.response('/hello', 200, 'text/html', 'World');
 assert.response('/notexistent', 404, 'text', '404');
