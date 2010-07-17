@@ -16,6 +16,7 @@ assert.response = function(url, statusCode, contentType) {
 }
 
 assert.response('/', 200, 'text/html');
-setTimeout(function() { assert.response('/index.html', 200, 'text/html'); }, 1000);
-setTimeout(function() { assert.response('/css/reset.css', 200, 'text/css'); }, 2000);
-setTimeout(function() { assert.response('/404', 404, 'text'); }, 3000);
+assert.response('/index.html', 200, 'text/html');
+assert.response('/css/reset.css', 200, 'text/css');
+assert.response('/css/app.less', 200, 'text/css');
+assert.response('/404', 404, 'text');
