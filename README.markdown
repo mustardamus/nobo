@@ -29,4 +29,24 @@ Available extensions:
     response.sendPackedHtml(path)                 - pack all assets (js|css|less) linked in the file and return new body
     response.sendLess(path)                       - read the .less file and return parsed css
     
-## 
+## Using Less in your app
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/app.less" />
+
+And you are good to go.
+
+## Packing assets
+
+Nobo can pack all linked files (js|css|less) in a .html file together resulting in one .html file with embedded scripts and styles. For example:
+
+    <script type="text/javascript" src="js/app.js"></script>
+
+becomes
+
+    <script type="text/javascript">$(document).ready(function() {
+
+    });</script>
+
+You can activate packing in the config.js file:
+
+    packAssets: true,                                   //linked .css/.less/.js from .html will be packed in the .html file resulting in 1 request
