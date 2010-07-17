@@ -2,9 +2,13 @@
 
 ## Writing an app
 
-                      require('./modules');
-    var nobo        = require('nobo');
-    
+                require('./modules');
+    var nobo  = require('nobo'),
+        sys   = require('sys');
+
+    //require('underscore');
+
+
     nobo.get('/hello', function(request, response) {
       response.sendHtml('World!');
     });
@@ -50,3 +54,21 @@ becomes
 You can activate packing in the config.js file:
 
     packAssets: true,                                   //linked .css/.less/.js from .html will be packed in the .html file resulting in 1 request
+
+
+## Test it before you write your app
+
+Assuming the initial app is running.
+
+    node app.js
+
+Run the test.
+
+    $ node test/nobo.js 
+    OK: / 200 text/html "something great" found in body
+    OK: /index.html 200 text/html "something great" found in body
+    OK: /css/reset.css 200 text/css "html,body" found in body
+    OK: /css/app.less 200 text/css "background: #eeeeee;" found in body
+    OK: /js/app.js 200 text/javascript "ready" found in body
+    OK: /hello 200 text/html "World" found in body
+    OK: /notexistent 404 text "404" found in body
