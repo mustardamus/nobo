@@ -25,8 +25,6 @@ Available extensions:
     response.send(statusCode, body, contentType)  - send raw data
     response.sendHtml(body)                       - send html
     response.sendFile(path, contentType)          - send file
-    
+    response.sendInspect(body)                    - send a object through a sys.inspect()
 
 
-## Problems
-When multiple files are requested (from index.html) it sometimes serve the wrong file (async) - idea: dont serve as files, but dynamically insert into index.html
