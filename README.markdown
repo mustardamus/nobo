@@ -27,5 +27,6 @@ Available extensions:
     response.sendFile(path, contentType)          - send file
     response.sendInspect(body)                    - send a object through a sys.inspect()
     response.sendPackedHtml(path)                 - pack all assets (js|css|less) linked in the file and return new body
+    response.sendLess(path)                       - read the .less file and return parsed css
     
 ## 
