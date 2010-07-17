@@ -3,8 +3,7 @@
 ## Writing an app
 
                 require('./modules');
-    var nobo  = require('nobo'),
-        sys   = require('sys');
+    var nobo  = require('nobo');
 
     //require('underscore');
 
