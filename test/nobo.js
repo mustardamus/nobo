@@ -25,3 +25,4 @@ assert.response('GET', '/hello', 200, 'text/html', 'World');
 assert.response('GET', '/notexistent', 404, 'text', '404');
 assert.response('POST', '/say?word=kewl', 200, 'application/json', 'kewl');
 assert.response('PUT', '/update', 200, 'text', 'awesome');
+assert.response('DELETE', '/delete', 200, 'text', 'delete');

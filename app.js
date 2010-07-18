@@ -15,4 +15,8 @@ nobo.put('/update', function(request, response) {
   response.sendText('awesome');
 });
 
+nobo.del('/delete', function(request, response) {
+  response.sendText('delete');
+});
+
 nobo.fire();
