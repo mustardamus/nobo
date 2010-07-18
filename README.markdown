@@ -35,7 +35,7 @@ Available extensions:
     
 ## Using Less in your app
 
-    <link rel="stylesheet" type="text/css" media="screen" href="css/app.less" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.less" />
 
 And you are good to go.
 
@@ -43,7 +43,7 @@ And you are good to go.
 
 Nobo can pack all linked files (js|css|less) in a .html file together resulting in one .html file with embedded scripts and styles. For example:
 
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
 becomes
 
