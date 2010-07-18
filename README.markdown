@@ -19,17 +19,14 @@
 
 ### request & response extension
 
-Nobo extends the request and response objects returned to your callback.
-
-    nobo.get('/params', function(request, response) {
-      response.sendInspect(request.params);
-    });
+Nobo extends the request and response objects returned to your callback. See the example abothe for the usage.
 
 Available extensions:
 
     request.params                                - a hash with passed parameters
     response.send(statusCode, body, contentType)  - send raw data
     response.sendHtml(body)                       - send html
+    response.sendJson(body)                       - send a string or abjact back as JSON
     response.sendFile(path, contentType)          - send file
     response.sendInspect(body)                    - send a object through a sys.inspect()
     response.sendPackedHtml(path)                 - pack all assets (js|css|less) linked in the file and return new body
@@ -50,12 +47,18 @@ Nobo can pack all linked files (js|css|less) in a .html file together resulting 
 becomes
 
     <script type="text/javascript">$(document).ready(function() {
+      $.post('/say?word=really', function(data) {
+        var p     = $('p'),
+            ptext = p.text();
 
+        p.text(ptext.replace('great', 'really great'));
+      });
     });</script>
+    
 
 You can activate packing in the config.js file:
 
-    packAssets: true,                                   //linked .css/.less/.js from .html will be packed in the .html file resulting in 1 request
+    packAssets: true
 
 
 ## Test it before you write your app
@@ -74,3 +77,4 @@ Run the test.
     OK: /js/app.js 200 text/javascript "ready" found in body
     OK: /hello 200 text/html "World" found in body
     OK: /notexistent 404 text "404" found in body
+    OK: /say?word=kewl 200 application/json "kewl" found in body
