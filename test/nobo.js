@@ -12,7 +12,7 @@ assert.response = function(method, url, statusCode, contentType, inBody) {
     assert.equal(response.statusCode, statusCode);
     assert.equal(response.headers['content-type'], contentType);
     assert.notEqual(body.indexOf(inBody), -1);
-    sys.puts('OK: '+url+' '+statusCode+' '+contentType+' "'+inBody+'" found in body');
+    sys.puts('OK: '+method+' '+url+' '+statusCode+' '+contentType+' "'+inBody+'" found in body');
   });
 }
 
@@ -24,3 +24,4 @@ assert.response('GET', '/js/app.js', 200, 'text/javascript', 'ready');
 assert.response('GET', '/hello', 200, 'text/html', 'World');
 assert.response('GET', '/notexistent', 404, 'text', '404');
 assert.response('POST', '/say?word=kewl', 200, 'application/json', 'kewl');
+assert.response('PUT', '/update', 200, 'text', 'awesome');

@@ -11,4 +11,8 @@ nobo.post('/say', function(request, response) {
   response.sendJson({ word: request.params.word });
 });
 
+nobo.put('/update', function(request, response) {
+  response.sendText('awesome');
+});
+
 nobo.fire();

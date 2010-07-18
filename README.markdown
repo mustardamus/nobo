@@ -25,6 +25,7 @@ Available extensions:
 
     request.params                                - a hash with passed parameters
     response.send(statusCode, body, contentType)  - send raw data
+    response.sendText(body)                       - send text
     response.sendHtml(body)                       - send html
     response.sendJson(body)                       - send a string or abjact back as JSON
     response.sendFile(path, contentType)          - send file
@@ -48,12 +49,7 @@ becomes
 
     <script type="text/javascript">
     $(document).ready(function() {
-      $.post('/say?word=really', function(data) {
-        var p     = $('p'),
-            ptext = p.text();
-
-        p.text(ptext.replace('great', 'really great'));
-      });
+      //your awesome client-side javascript here
     });
     </script>
     
@@ -72,11 +68,12 @@ Assuming the initial app is running.
 Run the test.
 
     $ node test/nobo.js 
-    OK: / 200 text/html "something great" found in body
-    OK: /index.html 200 text/html "something great" found in body
-    OK: /css/reset.css 200 text/css "html,body" found in body
-    OK: /css/app.less 200 text/css "background: #eeeeee;" found in body
-    OK: /js/app.js 200 text/javascript "ready" found in body
-    OK: /hello 200 text/html "World" found in body
-    OK: /notexistent 404 text "404" found in body
-    OK: /say?word=kewl 200 application/json "kewl" found in body
+    OK: GET / 200 text/html "something great" found in body
+    OK: GET /index.html 200 text/html "something great" found in body
+    OK: GET /css/reset.css 200 text/css "html,body" found in body
+    OK: GET /css/app.less 200 text/css "background: #eeeeee;" found in body
+    OK: GET /js/app.js 200 text/javascript "ready" found in body
+    OK: GET /hello 200 text/html "World" found in body
+    OK: GET /notexistent 404 text "404" found in body
+    OK: POST /say?word=kewl 200 application/json "kewl" found in body
+    OK: PUT /update 200 text "awesome" found in body
