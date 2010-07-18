@@ -10,4 +10,4 @@ var config = {
   }
 }
 
-for(var c in config) { exports[c] = config[c]; }      //with this line you can access the configs from any file by  var config = require('config'); config.some;
+for(var c in config) { exports[c] = config[c]; }      //with this line you can access the configs from any file by  var config = require('config'); config.port;
