@@ -5,8 +5,8 @@ var config  = require('../config'),
     sys     = require('sys');
 
 
-assert.response = function(url, statusCode, contentType, inBody) {
-  request({ uri: 'http://localhost:'+config.port+url }, function(error, response, body) {
+assert.response = function(method, url, statusCode, contentType, inBody) {
+  request({ uri: 'http://localhost:'+config.port+url, method: method }, function(error, response, body) {
     if(error) throw new Error(error);
     
     assert.equal(response.statusCode, statusCode);
@@ -16,10 +16,11 @@ assert.response = function(url, statusCode, contentType, inBody) {
   });
 }
 
-assert.response('/', 200, 'text/html', 'something great');
-assert.response('/index.html', 200, 'text/html', 'something great');
-assert.response('/css/reset.css', 200, 'text/css', 'html,body');
-assert.response('/css/app.less', 200, 'text/css', 'background: #eeeeee;');
-assert.response('/js/app.js', 200, 'text/javascript', 'ready');
-assert.response('/hello', 200, 'text/html', 'World');
-assert.response('/notexistent', 404, 'text', '404');
+assert.response('GET', '/', 200, 'text/html', 'something great');
+assert.response('GET', '/index.html', 200, 'text/html', 'something great');
+assert.response('GET', '/css/reset.css', 200, 'text/css', 'html,body');
+assert.response('GET', '/css/app.less', 200, 'text/css', 'background: #eeeeee;');
+assert.response('GET', '/js/app.js', 200, 'text/javascript', 'ready');
+assert.response('GET', '/hello', 200, 'text/html', 'World');
+assert.response('GET', '/notexistent', 404, 'text', '404');
+assert.response('POST', '/say?word=kewl', 200, 'application/json', 'kewl');

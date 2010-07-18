@@ -7,8 +7,8 @@ nobo.get('/hello', function(request, response) {
   response.sendHtml('World!');
 });
 
-nobo.get('/say', function(request, response) {
-  response.sendJson('{"you wanted me to say":'+request.params.word+'}');
+nobo.post('/say', function(request, response) {
+  response.sendJson({ word: request.params.word });
 });
 
 nobo.fire();

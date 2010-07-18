@@ -11,6 +11,10 @@
       response.sendHtml('World!');
     });
 
+    nobo.post('/say', function(request, response) {
+      response.sendJson({ word: request.params.word });
+    });
+
     nobo.fire();
 
 ### request & response extension
