@@ -1,5 +1,10 @@
+var modules = [
+  { url: 'http://github.com/mikeal/node-utils' },
+  { url: 'http://github.com/documentcloud/underscore/' },
+  { url: 'http://github.com/tautologistics/node-htmlparser', path: 'lib' },
+  { url: 'http://github.com/cloudhead/less.js', path: 'lib' }
+];
+
+
 require.paths.unshift(__dirname+'/lib');
-require.paths.unshift(__dirname+'/lib/node-utils'); //http://github.com/mikeal/node-utils
-require.paths.unshift(__dirname+'/lib/underscore'); //http://github.com/documentcloud/underscore/
-require.paths.unshift(__dirname+'/lib/node-htmlparser/lib'); //http://github.com/tautologistics/node-htmlparser
-require.paths.unshift(__dirname+'/lib/less.js/lib'); //http://github.com/cloudhead/less.js
+require(__dirname+'/lib/nobo/loader').require(modules);

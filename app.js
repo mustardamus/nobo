@@ -1,6 +1,5 @@
-            require('./modules');
-var nobo  = require('nobo');
-            //require('underscore');
+var nobo = require(__dirname+'/lib/nobo');
+           //require('underscore');
 
 
 var beforeTest = '';
