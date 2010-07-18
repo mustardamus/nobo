@@ -46,14 +46,16 @@ Nobo can pack all linked files (js|css|less) in a .html file together resulting 
 
 becomes
 
-    <script type="text/javascript">$(document).ready(function() {
+    <script type="text/javascript">
+    $(document).ready(function() {
       $.post('/say?word=really', function(data) {
         var p     = $('p'),
             ptext = p.text();
 
         p.text(ptext.replace('great', 'really great'));
       });
-    });</script>
+    });
+    </script>
     
 
 You can activate packing in the config.js file:
