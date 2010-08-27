@@ -19,7 +19,7 @@
 
 ### request & response extension
 
-Nobo extends the request and response objects returned to your callback. See the example abothe for the usage.
+Nobo extends the request and response objects returned to your callback. See the example above for the usage.
 
 Available extensions:
 
@@ -27,7 +27,7 @@ Available extensions:
     response.send(statusCode, body, contentType)  - send raw data
     response.sendText(body)                       - send text
     response.sendHtml(body)                       - send html
-    response.sendJson(body)                       - send a string or abjact back as JSON
+    response.sendJson(body)                       - send a string or objact back as JSON
     response.sendFile(path, contentType)          - send file
     response.sendInspect(body)                    - send a object through a sys.inspect()
     response.sendPackedHtml(path)                 - pack all assets (js|css|less) linked in the file and return new body
