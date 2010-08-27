@@ -2,7 +2,8 @@ var modules = [
   { url: 'http://github.com/mikeal/node-utils' },
   { url: 'http://github.com/documentcloud/underscore/' },
   { url: 'http://github.com/tautologistics/node-htmlparser', path: 'lib' },
-  { url: 'http://github.com/cloudhead/less.js', path: 'lib' }
+  { url: 'http://github.com/cloudhead/less.js', path: 'lib' },
+  { url: 'http://github.com/LearnBoost/mongoose' }
 ];
 
 
