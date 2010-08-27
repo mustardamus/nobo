@@ -1,5 +1,12 @@
-var nobo = require(__dirname+'/lib/nobo');
-           //require('underscore');
+            require('./modules');
+var nobo  = require(__dirname + '/lib/nobo');
+var mongo = require(__dirname + '/lib/nobo/mongo');
+            require('underscore');
+            
+var sys = require('sys');
+
+
+var User = mongo.model('User');
 
 
 var beforeTest = '';
@@ -26,6 +33,17 @@ nobo.del('/delete', function(request, response) {
 
 nobo.get('/before', function(request, response) {
   response.sendHtml(beforeTest);
-})
+});
+
+nobo.get('/mongo', function(request, response) {
+  var u = new User();
+      u.save();
+      
+  User.find().last(function(result) {
+    sys.puts(sys.inspect(result.__doc.created_at));
+  });
+  
+  response.sendInspect(u)
+});
 
 nobo.fire();
